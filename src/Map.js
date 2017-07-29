@@ -62,7 +62,7 @@ class Map extends Component {
    */
   handleMapClick(event) {
     const nextMarkers = [
-      ...this.state.markers,
+      // ...this.state.markers,
       {
         position: event.latLng,
         defaultAnimation: 2,
@@ -70,8 +70,10 @@ class Map extends Component {
       },
     ];
     this.setState({
-      markers: nextMarkers,
+      markers: nextMarkers
     });
+
+    this.props.onClick({ lat: nextMarkers[0].position.lat(), long: nextMarkers[0].position.lng() });
 
     if (nextMarkers.length === 3) {
         // this.props.toast(

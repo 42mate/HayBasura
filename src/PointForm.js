@@ -16,7 +16,7 @@ class PointForm extends Component {
     this.props.onSubmit({files: this.state.files, comment: this.state.comment, action: 'submit'});
   }
   cancel(){
-    this.props.onSubmit({action: 'cancel'});
+    this.props.onCancel();
   }
   onChange(field, comment) {
     this.setState({comment: comment.target.value});
@@ -34,8 +34,8 @@ class PointForm extends Component {
               <p>Subir o tomar foto</p>
             </Dropzone>
           </div>
-        <button type="button" onClick={this.cancel.bind(this)}>Cancelar</button>
-        <button type="submit" onClick={this.submit.bind(this)}>Reportar</button>
+        <button className="btn cancel" type="button" onClick={this.cancel.bind(this)}>Cancelar</button>
+        <button className="btn save" type="submit" onClick={this.submit.bind(this)}>Reportar</button>
       </div>
     );
   }
