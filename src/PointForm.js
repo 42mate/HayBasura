@@ -34,8 +34,8 @@ class PointForm extends Component {
               <p>Subir o tomar foto</p>
             </Dropzone>
           </div>
-        <button type="button" onClick={this.cancel.bind(this)}>Cancelar</button>
-        <button type="submit" onClick={this.submit.bind(this)}>Reportar</button>
+        <button className="btn cancel" type="button" onClick={this.cancel.bind(this)}>Cancelar</button>
+        <button className="btn save" type="submit" onClick={this.submit.bind(this)}>Reportar</button>
       </div>
     );
   }
