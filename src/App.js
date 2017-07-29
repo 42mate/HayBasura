@@ -28,7 +28,6 @@ class App extends Component {
     return (
       <div className="App" style={{ height: `100%` }}>
         <Header />
-        <NewPoint onNewPoint={createNewPoint} />
         <Map points={mock} />
         <Gallery />
       </div>
