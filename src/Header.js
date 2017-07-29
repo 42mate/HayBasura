@@ -11,7 +11,7 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="logo">
-          <img src={logo} />
+          <img src={logo} alt="logo" />
         </div>
         <div className="left">
           <div className="top">Hay Basura</div>
