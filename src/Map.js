@@ -61,7 +61,6 @@ class Map extends Component {
    * Go and try click now.
    */
   handleMapClick(event) {
-    console.log(event);
     const nextMarkers = [
       // ...this.state.markers,
       {

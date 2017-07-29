@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import NewPoint from './NewPoint';
 import logo from './logo.svg';
 
-const createNewPoint = () => {
-  console.log('Whasssaaaaaaa@');
-};
 
 class Header extends Component {
   render() {
@@ -20,7 +17,7 @@ class Header extends Component {
           </div>
         </div>
         <div className="left">
-          { this.props.showButton ? <NewPoint onNewPoint={createNewPoint} /> : null }
+          { this.props.showButton ? <NewPoint onNewPoint={this.props.onSubmitPoint} /> : null }
         </div>
       </div>
     );
