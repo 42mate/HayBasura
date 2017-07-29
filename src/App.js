@@ -10,7 +10,7 @@ const config = {
   authDomain: "haybasura-1501268339245.firebaseapp.com",
   databaseURL: "https://haybasura-1501268339245.firebaseio.com",
   projectId: "haybasura-1501268339245",
-  storageBucket: "",
+  storageBucket: "haybasura-1501268339245.appspot.com",
   messagingSenderId: "599927924989"
 };
 firebase.initializeApp(config);
@@ -54,28 +54,21 @@ class App extends Component {
   submitPoint(data) {
     console.log(data, this.state);
     var self = this;
-    // firebase.database().ref('points').push({
-    //   lat: self.state.menuPoint.lat,
-    //   lng: self.state.menuPoint.long,
-    //   msg: data.comment,
-    //   // foto: url,
-    //   created: Date.now(),
-    // });
-    firebase.storage()
-      .ref('images')
-      .child(data.files[0].name)
-      .getDownloadURL()
+    let storageRef = firebase.storage().ref('images/'+data.files[0].name);
+    storageRef.put(data.files[0]).then((result) => {
+      storageRef.getDownloadURL()
       .then(
         url => {
           firebase.database().ref('points').push({
             lat: self.state.menuPoint.lat,
-            lng: self.state.menuPoint.lng,
+            lng: self.state.menuPoint.long,
             msg: data.comment,
             foto: url,
             created: Date.now(),
           });
         }
       );
+    })
   }
 
   render() {
