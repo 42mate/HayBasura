@@ -11,6 +11,9 @@ class NewPoint extends Component {
   showForm() {
     this.setState({showForm: true});
   }
+  hideForm() {
+    this.setState({showForm: false});
+  };
   submitForm(data) {
     console.log(data);
     this.setState({showForm: false});
@@ -19,7 +22,7 @@ class NewPoint extends Component {
     return (
       <div>
         <button onClick={this.showForm.bind(this)} >Reportar basura</button>
-        { (this.state.showForm) ? <PointForm onSubmit={this.submitForm.bind(this)} /> : null}
+        { (this.state.showForm) ? <PointForm onSubmit={this.submitForm.bind(this)} onCancel={this.hideForm.bind(this)} /> : null}
       </div>
     );
   }

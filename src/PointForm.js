@@ -16,7 +16,7 @@ class PointForm extends Component {
     this.props.onSubmit({files: this.state.files, comment: this.state.comment, action: 'submit'});
   }
   cancel(){
-    this.props.onSubmit({action: 'cancel'});
+    this.props.onCancel();
   }
   onChange(field, comment) {
     this.setState({comment: comment.target.value});
