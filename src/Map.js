@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import {
   withGoogleMap,
   GoogleMap,
@@ -29,7 +30,6 @@ const GettingStartedGoogleMap = withGoogleMap(props => (
       ))}
     </GoogleMap>
 ));
-
 
 class Map extends Component {
 
@@ -94,21 +94,20 @@ class Map extends Component {
 
   render() {
     return (
-        <div style={{height: `100%`}}>
-          <GettingStartedGoogleMap
-              containerElement={
-                <div style={{ height: `100%` }} />
-              }
-              mapElement={
-                <div style={{ height: `100%` }} />
-              }
-              onMapLoad={this.handleMapLoad}
-              onMapClick={this.handleMapClick}
-              markers={this.state.markers}
-              onMarkerRightClick={this.handleMarkerRightClick}
-          />
-        asdsa
-        </div>
+      <div style={{height: `100%`}}>
+        <GettingStartedGoogleMap
+            containerElement={
+              <div style={{ height: `100%` }} />
+            }
+            mapElement={
+              <div style={{ height: `100%` }} />
+            }
+            onMapLoad={this.handleMapLoad}
+            onMapClick={this.handleMapClick}
+            markers={this.state.markers}
+            onMarkerRightClick={this.handleMarkerRightClick}
+        />
+      </div>
     );
   }
 }
