@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Map from './Map';
 import Header from './Header';
 import Gallery from './Gallery';
-
 import './App.css';
 
 const mock = [
@@ -19,11 +18,29 @@ const mock = [
 ];
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuPoint: {
+        lat: null,
+        lng: null,
+      },
+      showButton: false
+    };
+  }
+  showMenu = this.showMenu.bind(this);
+
+  showMenu(point) {
+    this.setState({
+      menuPoint: point,
+      showButton: true
+    });
+  }
   render() {
     return (
       <div className="App" style={{ height: `100%` }}>
-        <Header />
-        <Map points={mock} />
+        <Header showButton={this.state.showButton}/>
+        <Map points={mock} onClick={this.showMenu } />
         <Gallery />
       </div>
     );

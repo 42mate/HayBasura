@@ -20,11 +20,10 @@ class Header extends Component {
           </div>
         </div>
         <div className="left">
-          <NewPoint onNewPoint={createNewPoint} />
+          { this.props.showButton ? <NewPoint onNewPoint={createNewPoint} /> : null }
         </div>
       </div>
     );
   }
 }
-
 export default Header;
