@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Map from './Map';
 import NewPoint from './NewPoint';
+import Header from './Header';
+import Gallery from './Gallery';
 
 import './App.css';
 
@@ -25,8 +27,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <NewPoint onNewPoint={createNewPoint} />
         <Map points={mock} />
+        <Gallery />
       </div>
     );
   }
