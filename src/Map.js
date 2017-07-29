@@ -21,6 +21,7 @@ const GettingStartedGoogleMap = withGoogleMap(props => (
         defaultZoom={14}
         defaultCenter={{ lat: -27.4605771, lng: -58.974815 }}
         onClick={props.onMapClick}
+        classNam="content"
     >
       {props.markers.map(marker => (
           <Marker
@@ -97,7 +98,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div style={{height: `80%`, margin: `80px 0`}}>
+      <div className="map">
         <GettingStartedGoogleMap
             containerElement={
               <div style={{ height: `100%` }} />
