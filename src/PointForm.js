@@ -5,7 +5,7 @@ class PointForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: '',
+      comment: '',
       files: [],
     }
   }
@@ -13,19 +13,29 @@ class PointForm extends Component {
     this.setState({files: files});
   }
   submit(){
-    this.props.onSubmit({files: this.state.files, comments: this.state.comments});
+    this.props.onSubmit({files: this.state.files, comment: this.state.comment, action: 'submit'});
+  }
+  cancel(){
+    this.props.onSubmit({action: 'cancel'});
   }
   onChange(field, comment) {
-    this.setState({comments: comment.target.value});
+    this.setState({comment: comment.target.value});
   }
   render() {
     return (
-      <div>
-        <textarea onChange={ this.onChange.bind(this, 'comment')} />
-        <Dropzone onDrop={this.onDrop.bind(this)}>
-          <p>Try dropping some files here, or click to select files to upload.</p>
-        </Dropzone>
-        <button type="submit" onClick={this.submit.bind(this)}>Add</button>
+      <div className="pointForm">
+        <label htmlFor="comment">
+          ¿Algún comentario?
+        </label>
+        <br />
+          <textarea onChange={ this.onChange.bind(this, 'comment')} cols="5" rows="5"/>
+          <div className="dropZoneContainer">
+            <Dropzone onDrop={this.onDrop.bind(this)} className="dropzone">
+              <p>Subir o tomar foto</p>
+            </Dropzone>
+          </div>
+        <button type="button" onClick={this.cancel.bind(this)}>Cancelar</button>
+        <button type="submit" onClick={this.submit.bind(this)}>Reportar</button>
       </div>
     );
   }

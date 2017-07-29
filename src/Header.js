@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import NewPoint from './NewPoint';
 import logo from './logo.svg';
+
+const createNewPoint = () => {
+  console.log('Whasssaaaaaaa@');
+};
 
 class Header extends Component {
   render() {
@@ -8,11 +13,14 @@ class Header extends Component {
         <div className="logo">
           <img src={logo} />
         </div>
-        <div className="right">
+        <div className="left">
           <div className="top">Hay Basura</div>
           <div className="message">
             Haga click en el mapa para indicar donde hay un punto
           </div>
+        </div>
+        <div className="left">
+          <NewPoint onNewPoint={createNewPoint} />
         </div>
       </div>
     );
