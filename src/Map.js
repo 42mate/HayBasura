@@ -94,7 +94,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div style={{height: `100%`}}>
+      <div style={{height: `80%`, margin: `80px 0`}}>
         <GettingStartedGoogleMap
             containerElement={
               <div style={{ height: `100%` }} />
