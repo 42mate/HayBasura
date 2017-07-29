@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Map from './Map';
+import NewPoint from './NewPoint';
 
 import './App.css';
 
@@ -17,14 +18,15 @@ const mock = [
 ]
 
 const createNewPoint = () => {
-  console.log('Whasssaaaaaaa');
+  console.log('Whasssaaaaaaa@');
 };
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Map points={mock} onNewPoint={createNewPoint} />
+        <NewPoint onNewPoint={createNewPoint} />
+        <Map points={mock} />
       </div>
     );
   }
