@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Map from './Map';
-import NewPoint from './NewPoint';
 import Header from './Header';
 import Gallery from './Gallery';
 
@@ -18,10 +17,6 @@ const mock = [
     photoUrl: 'http://kajsdfkjdf.com/aksjdf.jpg'
   }
 ];
-
-const createNewPoint = () => {
-  console.log('Whasssaaaaaaa@');
-};
 
 class App extends Component {
   render() {

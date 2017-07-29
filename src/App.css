@@ -42,8 +42,11 @@
   margin-right: 30px;
 }
 
-.header .right {
+.header .left {
   float: left;
+}
+.header .right {
+  float: right;
 }
 
 .header .top {
@@ -76,6 +79,25 @@
   flex-grow: 1;
   position: absolute;
   bottom: 0px;
+}
+
+.pointForm {
+  text-align: center;
+  position: absolute;
+  background-color: #cccccc;
+  z-index: 100;
+  color: white;
+}
+
+.pointForm textarea, .pointForm .dropzone, .pointForm button{
+  width: 50%;
+  display: table-cell;
+}
+.dropZoneContainer {
+  width : 70%;
+  height : 20%;
+  border : 1px solid white;
+  margin: auto;
 }
 
 @keyframes App-logo-spin {
