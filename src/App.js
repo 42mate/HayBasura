@@ -28,9 +28,10 @@ class App extends Component {
       showButton: false
     };
   }
-  showMenu = this.showMenu.bind(this);
 
-  showMenu(point) {
+  showMenu = this.showMenuApp.bind(this);
+
+  showMenuApp(point) {
     this.setState({
       menuPoint: point,
       showButton: true
