@@ -18,7 +18,7 @@ class NewPoint extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.showForm.bind(this)} >Reportar basura</button>
+        <button onClick={this.showForm.bind(this)} className="btn save">Reportar basura</button>
         { (this.state.showForm) ? <PointForm onSubmit={this.submitForm.bind(this)} /> : null}
       </div>
     );
