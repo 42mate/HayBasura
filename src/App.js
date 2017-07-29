@@ -14,7 +14,7 @@ const mock = [
     long: 1,
     photoUrl: 'http://kajsdfkjdf.com/aksjdf.jpg'
   }
-]
+];
 
 const createNewPoint = () => {
   console.log('Whasssaaaaaaa');
@@ -23,7 +23,7 @@ const createNewPoint = () => {
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ height: `100%` }}>
         <Map points={mock} onNewPoint={createNewPoint} />
       </div>
     );
